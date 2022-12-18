@@ -25,13 +25,13 @@ triggers:
 # Enable static website hosting for the Google Cloud Storage bucket
 # that contains the compiled application files
 resources:
-  archives:
-  - contents: dist
-    name: dist
-  - contents: cloudbuild.yaml
-    name: cloudbuild.yaml
-  - contents: gsutil.tar.gz
-    name: gsutil.tar.gz
+#  archives:
+#  - contents: dist
+#    name: dist
+#  - contents: cloudbuild.yaml
+#    name: cloudbuild.yaml
+#  - contents: gsutil.tar.gz
+#    name: gsutil.tar.gz
 
 # Replace [BUCKET_NAME] with the name of your Google Cloud Storage bucket
 # Replace [LOCATION] with the location for the bucket (e.g. "us", "eu", "asia")
