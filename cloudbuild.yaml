@@ -1,7 +1,7 @@
 steps:
   # Create a Google Cloud Storage bucket
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['storage', 'buckets', 'create', '[gs://ihangularjs]', '--location', 'us']
+    args: ['storage', 'buckets', 'create', 'gs://ihangularjs', '--location', 'us']
 
   # Build the AngularJS application
   - name: 'node:12'
