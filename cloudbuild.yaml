@@ -17,10 +17,10 @@ steps:
 
 # Set up a trigger to automatically build and deploy the application
 # when code is pushed to the repository
-triggers:
-  - github:
-      repo-name: [interviewhelpio/angularjs.git]
-      branch: master
+#triggers:
+#  - github:
+#      repo-name: [interviewhelpio/angularjs.git]
+#      branch: master
 
 # Enable static website hosting for the Google Cloud Storage bucket
 # that contains the compiled application files
