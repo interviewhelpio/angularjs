@@ -4,10 +4,10 @@ steps:
     args: ['storage', 'buckets', 'create', 'gs://ihangularjs', '--location', 'us']
 
   # Build the AngularJS application
-  - name: 'node:12'
+  - name: 'node:18'
     entrypoint: npm
     args: ['install']
-  - name: 'node:12'
+  - name: 'node:18'
     entrypoint: npm
     args: ['run', 'build']
 
