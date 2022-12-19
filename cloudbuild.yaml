@@ -1,7 +1,7 @@
 steps:
   # Create a Google Cloud Storage bucket
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['storage', 'buckets', 'create', 'gs://ihangularjs', '--location', 'us']
+    args: ['storage', 'buckets', 'create', 'gs://bkopy.nterviewhelp.io', '--location', 'us']
     allowFailure: true
 
   # Build the AngularJS application
@@ -14,7 +14,7 @@ steps:
 
   # Upload the compiled application files to Google Cloud Storage
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['cp', '-r', 'dist/*', 'gs://ihangularjs/']
+    args: ['cp', '-r', 'dist/*', 'gs://bkopy.interviewhelp.io/']
 
 # Set up a trigger to automatically build and deploy the application
 # when code is pushed to the repository
