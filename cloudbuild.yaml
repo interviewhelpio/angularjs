@@ -14,7 +14,7 @@ steps:
 
   # Upload the compiled application files to Google Cloud Storage
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['cp', '-r', 'dist/*', 'gs://[ihangularjs]/']
+    args: ['cp', '-r', 'dist/*', 'gs://ihangularjs/']
 
 # Set up a trigger to automatically build and deploy the application
 # when code is pushed to the repository
