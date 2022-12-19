@@ -1,7 +1,7 @@
 steps:
   # Create a Google Cloud Storage bucket
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['storage', 'buckets', 'create', 'gs://bkopy.nterviewhelp.io', '--location', 'us']
+    args: ['storage', 'buckets', 'create', 'gs://bkopy.interviewhelp.io', '--location', 'us']
     allowFailure: true
 
   # Build the AngularJS application
