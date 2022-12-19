@@ -1,8 +1,4 @@
 steps:
-  # Create a Google Cloud Storage bucket
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['storage', 'buckets', 'create', 'gs://bkopy.interviewhelp.io', '--location', 'us']
-    allowFailure: true
 
   # Build the AngularJS application
   - name: 'node:18'
@@ -14,27 +10,4 @@ steps:
 
   # Upload the compiled application files to Google Cloud Storage
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['cp', '-r', 'dist/*', 'gs://bkopy.interviewhelp.io/']
-
-# Set up a trigger to automatically build and deploy the application
-# when code is pushed to the repository
-#triggers:
-#  - github:
-#      repo-name: [interviewhelpio/angularjs.git]
-#      branch: master
-
-# Enable static website hosting for the Google Cloud Storage bucket
-# that contains the compiled application files
-#resources:
-#  archives:
-#  - contents: dist
-#    name: dist
-#  - contents: cloudbuild.yaml
-#    name: cloudbuild.yaml
-#  - contents: gsutil.tar.gz
-#    name: gsutil.tar.gz
-
-# Replace [BUCKET_NAME] with the name of your Google Cloud Storage bucket
-# Replace [LOCATION] with the location for the bucket (e.g. "us", "eu", "asia")
-# Replace [REPO_NAME] with the name of your GitHub repository
-
+    args: ['cp', '-r', 'dist/*', '$_BUCKET']
