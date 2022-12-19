@@ -3,7 +3,6 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['storage', 'buckets', 'create', 'gs://ihangularjs', '--location', 'us']
     allowFailure: true
-    allowExitCodes: 409
 
   # Build the AngularJS application
   - name: 'node:18'
